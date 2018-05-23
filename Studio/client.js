@@ -7,14 +7,14 @@ module.exports = function(){
     //this.user = {}
 
     this.initiate = function(){
-        console.log("client error" + err.toString());
+        console.log("socket error" + err.toString());
     }
 
     this.data = function(data){
-        console.log("client closed:");
+        console.log("socket closed:");
     }
     this.error = function(err){
-        console.log("client data" + data.toString());
+        console.log("socket data" + data.toString());
     }
     this.end = function(){
 
