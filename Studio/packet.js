@@ -15,7 +15,7 @@ module.exports = packet = {
             if(typeof param === 'string'){
                 //do this
                     buffer = new Buffer(param, 'utf8');
-                    buffer = Buffer.concat90([buffer, zeroBuffer], buffer.length + 1)
+                    buffer = Buffer.concat([buffer, zeroBuffer], buffer.length + 1)
 
             }
             else if (typeof param === 'number'){
@@ -38,7 +38,7 @@ module.exports = packet = {
         var size = new Buffer(1);
         size.writeUInt8(dataBuffer.length + 1, 0);
 
-        var finalPacket = Buffer.concat90([size, dataBuffer], size.length + dataBuffer.length)
+        var finalPacket = Buffer.concat([size, dataBuffer], size.length + dataBuffer.length)
 
         return finalPacket;
     }

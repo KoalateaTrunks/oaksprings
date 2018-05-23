@@ -16,18 +16,14 @@ module.exports = function(){
         }
     }
     
-    {
-        console.log("client error" + err.toString());
-    }
-
     this.data = function(data){
-        console.log("client closed:");
-    }
-    this.error = function(err){
         console.log("client data" + data.toString());
-    }
-    this.end = function(){
-
-    }
+     }
+     this.error = function(err){
+     console.log("client error" + err.toString());
+     }
+     this.end = function(){
+      console.log("client closed:");
+     }
 
 

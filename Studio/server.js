@@ -38,7 +38,7 @@ map_files.forEach(function(mapFile)
 net.createServer(function(socket) {
 
     console.log("socket connected");
-    var c_inst = new require ('.client.js');
+    var c_inst = new require ('./client.js');
     var thisClient = new c_inst();
 
     thisClient.socket = socket;
