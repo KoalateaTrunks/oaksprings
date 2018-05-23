@@ -6,8 +6,20 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_Loading</background>
+    <background>background\bg_Connecting</background>
+    <background>background\title_screen</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <objects name="sockets">
+      <object>objects\Network</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_init</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
