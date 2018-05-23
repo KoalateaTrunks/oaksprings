@@ -7,6 +7,16 @@ module.exports = function(){
     //this.user = {}
 
     this.initiate = function(){
+        var client = this;
+
+        //send connection handshake packet to client
+        client.socket.write(packet.build(["HELLO", now().toString()]))
+
+        console.log('client initiated')
+        }
+    }
+    
+    {
         console.log("client error" + err.toString());
     }
 
@@ -21,4 +31,3 @@ module.exports = function(){
     }
 
 
-}

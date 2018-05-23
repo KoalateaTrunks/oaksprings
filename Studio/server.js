@@ -6,7 +6,7 @@ var fs = require('fs');
 //fs = file system
 var net = require('net');
 //net = gives access to creating servers, listening to events, etc
-
+require ('./packet.js')
 //load initialisers
 var init_files = fs.readdirSync(__dirname + "/Initializer"); // code will not move on before this piece
 init_files.forEach(function(initFile)
