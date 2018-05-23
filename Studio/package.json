@@ -8,8 +8,7 @@
     "binary-parser": "*",
     "performance-now": "*",
     "mongoose": "*",
-    "underscore": "*",
-    "socket.io": "*"
+    "underscore": "*"
   },
   "scripts": {
     "start": "node server.js"
