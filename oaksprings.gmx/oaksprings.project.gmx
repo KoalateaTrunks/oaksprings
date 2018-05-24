@@ -5,7 +5,10 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\UI_Framework</sprite>
+    <sprite>sprites\spr_ui_base</sprite>
+  </sprites>
   <backgrounds name="background">
     <background>background\bg_Loading</background>
     <background>background\bg_Connecting</background>
@@ -18,6 +21,20 @@
   <objects name="objects">
     <objects name="sockets">
       <object>objects\Network</object>
+    </objects>
+    <objects name="UI Framework">
+      <object>objects\UI_base</object>
+      <object>objects\UI_focus_base</object>
+      <object>objects\UI_textbox_base</object>
+      <object>objects\UI_button_base</object>
+    </objects>
+    <objects name="Room Specific">
+      <objects name="Login">
+        <object>objects\txt_Username</object>
+        <object>objects\txt_Password</object>
+        <object>objects\btn_Login</object>
+        <object>objects\btn_Register</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
