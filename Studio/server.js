@@ -44,11 +44,17 @@ net.createServer(function(socket) {
     thisClient.socket = socket;
     thisClient.initiate();
 
-    socket.on('error', thisClient.error);
+    socket.on('error', error => {
+        console.log('error event recieved');
+    });
 
-    socket.on('end', thisClient.end);
+    socket.on('end', end => {
+        console.log('end event recieved');
+    });
 
-    socket.on('data', thisClient.data);
+    socket.on('data', data => {
+        console.log('data event received');
+    });
 
 }).listen(config.port);
 

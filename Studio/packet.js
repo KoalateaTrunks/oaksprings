@@ -16,7 +16,7 @@ module.exports = packet = {
                 //do this
                     buffer = new Buffer(param, 'utf8');
                     buffer = Buffer.concat([buffer, zeroBuffer], buffer.length + 1)
-
+//bc this is a security issue we can change new Buffer, and use Buffer.from(param, 'utf8') instead later
             }
             else if (typeof param === 'number'){
                 buffer = new Buffer(2);
