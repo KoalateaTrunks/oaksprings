@@ -12,7 +12,7 @@ var init_files = fs.readdirSync(__dirname + "/Initializer"); // code will not mo
 init_files.forEach(function(initFile)
 /**for every item in array call this func */ {
     console.log('Loading Initializer: ' + initFile);
-    require(__dirname + "/Initializers/" + initFile);
+    require(__dirname + "/Initializer/" + initFile);
 });
 
 //load models
