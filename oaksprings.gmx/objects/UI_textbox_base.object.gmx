@@ -26,103 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-/** text = ""; */
-
-///Text Input Create Script
-//input storage variable
 text = "";
-//focus check bool
-focus = false;
-//string max characters
-//this is set to 10 because that is the max the default 100px box will hold
-//experiment with more or less characters depending on size
-maxCharacters = 15;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-
-///Text Input Step Script
-//check if box is focused
-if (focus = true)
-   {
-     //if is focused, check for user hitting enter to stop input
-     if (keyboard_check_pressed(vk_enter))
-         {
-           //stop focus on player hitting enter
-              focus = false;
-         }
-     //Get input up to max characters.
-       if (string_length(input)&lt;maxCharacters)
-         {
-              input = keyboard_string;
-         }
-      /* If they entered max characters no longer get input unless
-        it is backspace, then delete the last character and set
-       the keyboard_string to the previous characters. */
-       else if (keyboard_check_pressed(vk_backspace))
-        {
-            input = string_delete(input,maxCharacters,1);
-            keyboard_string = input;
-        }
- }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-
-///On Text Input Global MB Click
-/* The second set of coords in rectangle are size of collision box and should be
-set to the size of the text box. This text box is 100x20 (x + 100, y + 20) */
-//check if user has clicked the text box
-if (point_in_rectangle(mouse_x, mouse_y, x, y, x + 100, y + 20))
-  {
-     focus = true;
-     keyboard_string = input;
-  }
-//if user clicked outside text box make the text box lose focus
-else if (focus = true)
-  {
-     focus = false;
-  }
 </string>
           </argument>
         </arguments>
@@ -145,7 +49,7 @@ else if (focus = true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/** draw_self();
+            <string>draw_self();
 
 if(focused){
     draw_rectangle(x,y, x + (16 * image_xscale), y + (16 * image_yscale), 2);
@@ -155,14 +59,7 @@ if(string_length(text) &gt; 0 || focused){
     draw_text(x + 3, y + 8, string(text));
 }else{
     draw_text(x + 3, y + 8, string(placeholder));
-} */
-
-///On Text Input Draw
-//draw a rectangle that represents the text box
-//make sure that this rectangle and the collision one match up
-draw_rectangle(x, y, x +100, y + 20, true);
-//draw the text
-draw_text(x, y, input);
+}
 </string>
           </argument>
         </arguments>
@@ -185,12 +82,12 @@ draw_text(x, y, input);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/** if(focused){
-    if keyboard_check(vk_backspace){
+            <string>if(focused){
+    if(keyboard_key == vk_backspace){
         text = string_copy(text, 0, string_length(text) - 1)
-        }else{
+    }else{
         text += keyboard_lastchar;
-}} */
+}}
 </string>
           </argument>
         </arguments>
