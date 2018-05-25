@@ -52,7 +52,13 @@ text = "Login"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message("Username: " + txt_Username.text + txt_Password.text);
+            <string>event_inherited();
+
+if(string_length(txt_Username.text) &gt; 0 &amp;&amp; string_length(txt_Password.text) &gt; 0){
+//execute this
+}else{
+    show_message("Error:Username or Password cannot be blank")
+} 
 </string>
           </argument>
         </arguments>
