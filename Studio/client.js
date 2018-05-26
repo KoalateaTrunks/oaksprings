@@ -5,9 +5,10 @@ module.exports = function(){
     //objects will be added at runtime (wont exist till then)
     //this.socket = {}
     //this.user = {}
+    var client = this;
 
     this.initiate = function(){
-        var client = this;
+
 
         //send connection handshake packet to client
         client.socket.write(packet.build(["HELLO", now().toString()]))
@@ -18,6 +19,7 @@ module.exports = function(){
     
     this.data = function(data){
         console.log("client data" + data.toString());
+        packet.parse(client, data);
      }
      this.error = function(err){
      console.log("client error" + err.toString());
