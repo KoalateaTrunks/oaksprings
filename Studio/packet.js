@@ -81,7 +81,15 @@ module.exports = packet = {
             break;
 
             case "REGISTER":
-            //do something
+                var data = PacketModels.register.parse(data);
+                User.register(data.username, data.password, function(result, user){
+                    if(result){
+                        c.socket.write(packet.build(["REGISTER", "TRUE"]))
+                    }else{
+                        c.socket.write(packet.build(["REGISTER", "FALSE"]))
+                    }
+                })
+
             break;
 
         }
