@@ -5,6 +5,6 @@ exports.start_x = 200;
 exports.start_y = 200;
 //where player starts
 
-exports.client = [];
+exports.clients = [];
 //list of clients, array of all clients in room
 

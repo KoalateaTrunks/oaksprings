@@ -70,6 +70,7 @@ module.exports = packet = {
             case "LOGIN":
                 var data = PacketModels.login.parse(datapacket);
                 User.login(data.username, data.password, function(result, user){
+                    console.log("Login Result " + result)
                     if(result){
                         c.user = user;
                         c.enterroom(c.user.current_room);

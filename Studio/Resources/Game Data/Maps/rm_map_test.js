@@ -1,5 +1,5 @@
-exports.name = "West Forest";
-exports.room = "rm_map_home";
+exports.name = "Test";
+exports.room = "rm_map_test";
 
 exports.start_x = 320;
 exports.start_y = 320;
