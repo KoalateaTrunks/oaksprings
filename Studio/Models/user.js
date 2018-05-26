@@ -7,8 +7,8 @@ var userSchema = new mongoose.Schema({
     sprite: String,
 
     current_room: String,
-    pos_x: Number,
-    pos_y: Number
+    pos_x: {type: Number, default:0},
+    pox_y: {type:Number, default:0}    
 
 
 });
@@ -19,7 +19,7 @@ userSchema.statics.register = function(username, password, cb){
             username: username,
             password: password,
 
-            sprite: "spr_Hero",
+            sprite: "spr_Player",
 
             current_room: maps[config,starting_zone].room,
             pos_x: maps[config.starting_zone].start_x,
@@ -27,11 +27,12 @@ userSchema.statics.register = function(username, password, cb){
         });
 
         new_user.save(function(err){
-            if(!err){
-                cb(true);
-            }else{
+            if(err){
+                console.log('Err', err);
                 cb(false);
+            return;
             }
+                cb(true);
         });
 };
 
